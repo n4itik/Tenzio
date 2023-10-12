@@ -114,7 +114,9 @@ export default function App() {
       <div className="roll-count">
         <p>Roll Count → {rollCount}</p>
         <p>
-          Best Roll Count → {bestRollCount === Infinity ? "??" : bestRollCount}
+          {bestRollCount !== Infinity
+            ? `Best Roll Count → ${bestRollCount}`
+            : "•••"}
         </p>
       </div>
     </main>
