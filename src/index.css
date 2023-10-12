@@ -12,7 +12,7 @@ main,
 body {
   margin: 0;
   background-color: #1c1917;
-  font-family: "Comic Neue", cursive;
+  font-family: "Josefin Sans", sans-serif;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -76,7 +76,7 @@ p {
 /* Button */
 
 .roll-dice {
-  height: 50px;
+  padding: 0.6em 0 0.3em;
   width: 150px;
   border: none;
   border-radius: 6px;
