@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+main,
+.die-face {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  background-color: #1c1917;
+  font-family: "Comic Neue", cursive;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  user-select: none;
+}
+
+main {
+  background-color: #fdeff2;
+  color: #1c1917;
+  height: 500px;
+  max-width: 800px;
+  border-radius: 5px;
+  padding: 1.25em;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  color: #494745;
+}
+
+/* Header */
+
+.title {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.instructions {
+  font-weight: 400;
+  margin-top: 0;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Dice */
+
+.dice-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 1.25em;
+  margin-bottom: 2.5em;
+}
+
+.die-face {
+  height: 50px;
+  width: 50px;
+  background-color: #1c1917;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.die-icon {
+  font-size: 3.65rem;
+}
+
+/* Button */
+
+.roll-dice {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e11d48;
+  color: white;
+  font-size: 1.4rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.roll-dice:focus {
+  outline: none;
+}
+
+.roll-dice:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+/* Score */
+
+.roll-count {
+  line-height: 0.5;
+  align-self: flex-start;
+  padding-left: 2em;
+  padding-top: 1em;
+  margin-bottom: -1em;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  main {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .title {
+    margin-bottom: -1em;
+  }
+
+  .dice-container {
+    gap: 0.625em;
+    margin-bottom: 1.25em;
+  }
+
+  .roll-count {
+    padding-left: 0.5em;
+  }
+}
