@@ -8,8 +8,8 @@ import Confetti from "react-confetti";
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice());
   const [rollCount, setRollCount] = React.useState(0);
-  const [bestRollCount, setBestRollCount] = React.useState(
-    localStorage.getItem("bestRollCount") || Infinity
+  const [bestScore, setBestScore] = React.useState(
+    localStorage.getItem("bestScore") || Infinity
   );
   const [tenzies, setTenzies] = React.useState(false);
   const [disabled, setDisabled] = React.useState(false);
@@ -27,9 +27,9 @@ export default function App() {
   }, [dice]);
 
   React.useEffect(() => {
-    if (tenzies && rollCount < bestRollCount) {
-      setBestRollCount(rollCount);
-      localStorage.setItem("bestRollCount", rollCount);
+    if (tenzies && rollCount < bestScore) {
+      setBestScore(rollCount);
+      localStorage.setItem("bestScore", rollCount);
     }
     if (!tenzies) {
       setRollCount(0);
@@ -120,11 +120,7 @@ export default function App() {
       </button>
       <div className="roll-count">
         <p>Roll Count → {rollCount}</p>
-        <p>
-          {bestRollCount !== Infinity
-            ? `Best Roll Count → ${bestRollCount}`
-            : "•••"}
-        </p>
+        <p>{bestScore !== Infinity ? `Best Score → ${bestScore}` : "•••"}</p>
       </div>
     </main>
   );
