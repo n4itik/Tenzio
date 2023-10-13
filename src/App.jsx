@@ -12,6 +12,7 @@ export default function App() {
     localStorage.getItem("bestRollCount") || Infinity
   );
   const [tenzies, setTenzies] = React.useState(false);
+  const [disabled, setDisabled] = React.useState(false);
 
   React.useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
@@ -20,6 +21,8 @@ export default function App() {
     if (allHeld && allSameValue) {
       setTenzies(true);
       new Audio(celebrationSound).play();
+    } else {
+      setDisabled(allHeld);
     }
   }, [dice]);
 
@@ -112,7 +115,7 @@ export default function App() {
         current value between rolls.
       </p>
       <div className="dice-container">{diceElements}</div>
-      <button className="roll-dice" onClick={rollDice}>
+      <button className="roll-dice" onClick={rollDice} disabled={disabled}>
         {tenzies ? "New Game" : "Roll"}
       </button>
       <div className="roll-count">

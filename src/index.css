@@ -95,6 +95,11 @@ p {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
+.roll-dice:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Score */
 
 .roll-count {
