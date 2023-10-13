@@ -1,5 +1,7 @@
 import React from "react";
 import Die from "./Die";
+import diceRollSound from "./assets/dice-roll.mp3";
+import celebrationSound from "./assets/celebration.mp3";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 
@@ -17,6 +19,7 @@ export default function App() {
     const allSameValue = dice.every((die) => die.value === firstValue);
     if (allHeld && allSameValue) {
       setTenzies(true);
+      new Audio(celebrationSound).play();
     }
   }, [dice]);
 
@@ -47,6 +50,7 @@ export default function App() {
   }
 
   function rollDice() {
+    new Audio(diceRollSound).play();
     if (!tenzies) {
       setDice((oldDice) =>
         oldDice.map((die) => {
